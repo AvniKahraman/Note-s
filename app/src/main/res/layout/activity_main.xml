@@ -15,11 +15,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
-        android:padding="16dp"
+        android:padding="14dp"
         android:text="Notes"
         android:textColor="@color/orange"
         android:textSize="24dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recylerview"
+            android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="1dp"
