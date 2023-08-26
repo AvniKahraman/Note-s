@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:gravity="top"
+    android:layout_height="wrap_content"
     android:padding="16dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
     android:background="@drawable/orange_border"
     android:theme="@style/ThemeOverlay.AppCompat.Light">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
+        
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/orange"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
         <TextView
-            android:id="@+id/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:padding="5dp"
-            android:paddingBottom="5dp"
-            android:text="Deneme"
-            android:textColor="@color/orange"
-            android:textSize="18sp" />
+            android:id="@+id/contextTextView"
+            android:text="Content"
+            android:fontFamily="@font/poppins"
+            android:maxLines="3"
+            android:layout_marginTop="4dp"/>
 
+        
+        
+        
+        
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/saveButton"
-        android:src="@drawable/baseline_done_24"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="33dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_delete_24"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="40dp"
-        android:text="Deneme DENEME Deneme DENEME "
-        android:textSize="14dp" />
-
-</RelativeLayout>
+     
+</androidx.cardview.widget.CardView>

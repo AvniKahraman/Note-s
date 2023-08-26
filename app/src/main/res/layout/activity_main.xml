@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/addNoteHeading"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
@@ -22,10 +22,20 @@
         android:textStyle="bold"
         />
 
+
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/addNoteHeading">
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="410dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="#515050" />
 
 
         <androidx.recyclerview.widget.RecyclerView
