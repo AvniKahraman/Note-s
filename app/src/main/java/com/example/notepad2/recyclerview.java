@@ -25,11 +25,11 @@ public class recyclerview extends AppCompatActivity {
 
         database = this.openOrCreateDatabase("Note", MODE_PRIVATE, null);
 
-        binding.titleTextView.setOnLongClickListener(new View.OnLongClickListener() {
+        binding.deleteView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
+            public void onClick(View v) {
                 showDeleteConfirmationDialog();
-                return true;
+
             }
         });
     }
