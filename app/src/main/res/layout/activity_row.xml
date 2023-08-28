@@ -40,7 +40,8 @@
                 android:layout_height="24dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="30dp"
-                android:src="@drawable/baseline_edit_24"/>
+                android:src="@drawable/baseline_edit_24"
+                android:clickable="true"/>
 
             <ImageView
                 android:id="@+id/deleteView"
@@ -48,7 +49,8 @@
                 android:layout_height="24dp"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="7dp"
-                android:src="@drawable/baseline_delete_24"/>
+                android:src="@drawable/baseline_delete_24"
+                android:clickable="true"/>
 
         </RelativeLayout>
 
