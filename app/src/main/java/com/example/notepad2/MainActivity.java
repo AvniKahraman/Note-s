@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         noteArrayList = new ArrayList<>();
 
         binding.recylerview.setLayoutManager(new LinearLayoutManager(this));
-        noteAdapter = new NoteAdapter(noteArrayList);
+        noteAdapter = new NoteAdapter(MainActivity.this, noteArrayList);
         binding.recylerview.setAdapter(noteAdapter);
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -77,35 +77,35 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onBindViewHolder(@NonNull NoteAdapter.NoteHolder holder, int position) {
-        // İmajı ayarla, metni gösterme
-        holder.binding.editView.setImageResource(R.drawable.baseline_delete_24); // your_image yerine uygun resim kaynağını kullanın
+        public void onBindViewHolder(@NonNull NoteAdapter.NoteHolder holder, int position) {
+            // İmajı ayarla, metni gösterme
+            holder.binding.editView.setImageResource(R.drawable.baseline_delete_24); // your_image yerine uygun resim kaynağını kullanın
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int clickedPosition = holder.getAdapterPosition();
-                if (clickedPosition != RecyclerView.NO_POSITION) {
-                    Intent intent = new Intent(holder.itemView.getContext(), Notepad.class);
-                    intent.putExtra("info", "old");
-                    intent.putExtra("noteId", noteArrayList.get(clickedPosition).id);
-                    holder.itemView.getContext().startActivity(intent);
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int clickedPosition = holder.getAdapterPosition();
+                    if (clickedPosition != RecyclerView.NO_POSITION) {
+                        Intent intent = new Intent(holder.itemView.getContext(), Notepad.class);
+                        intent.putExtra("info", "old");
+                        intent.putExtra("noteId", noteArrayList.get(clickedPosition).id);
+                        holder.itemView.getContext().startActivity(intent);
+                    }
                 }
-            }
-        });
+            });
 
 
 
-    // Uzun tıklamaya tepki veren bir OnLongClickListener ekleyin
-        holder.binding.deleteView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Silme işlemi burada gerçekleştirilebilir
-                deleteNoteFromDatabase(noteArrayList.get(position).id);
+        // Uzun tıklamaya tepki veren bir OnLongClickListener ekleyin
+            holder.binding.deleteView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Silme işlemi burada gerçekleştirilebilir
+                    deleteNoteFromDatabase(noteArrayList.get(position).id);
 
-            }
-        });
-    }
+                }
+            });
+        }
 
     private void deleteNoteFromDatabase(int noteId) {
         // SQLite veritabanından notu silme işlemini gerçekleştirin
