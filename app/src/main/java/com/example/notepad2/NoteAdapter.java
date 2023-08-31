@@ -41,6 +41,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     public void onBindViewHolder(@NonNull NoteHolder holder, int position) {
         Note_class note = noteArrayList.get(position);
         holder.binding.editView.setImageResource(R.drawable.baseline_edit_24);
+
+        holder.binding.titleTextView.setText(note.getTitle()); // Başlığı titleTextView'e ayarlayın
+        holder.binding.contextTextView.setText(note.getType()); // İçeriği contextTextView'e ayarlayın
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +65,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
             }
         });
     }
+
 
     private void showDeleteConfirmationDialog(final int noteId, final int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -83,10 +88,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
     private void deleteNoteFromDatabase(int noteId, int position) {
         try {
-            SQLiteDatabase database = this.openOrCreateDatabase("Note", MODE_PRIVATE, null);
+            SQLiteDatabase database = context.openOrCreateDatabase("Note", Context.MODE_PRIVATE, null);
             database.execSQL("DELETE FROM note WHERE id = ?", new Object[]{noteId});
-            noteArrayList.remove(position); // Silinen notu listeden kaldır
-            noteAdapter.notifyItemRemoved(position); // Adapter'a değişikliği bildir
+            noteArrayList.remove(position);
+
+            // Listenin güncellenmesi için notifyDataSetChanged çağrısı yapılıyor
+            notifyDataSetChanged();
         } catch (Exception e) {
             e.printStackTrace();
         }

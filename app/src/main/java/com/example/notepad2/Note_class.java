@@ -3,6 +3,7 @@ public class Note_class {
 
     String title;
     int id;
+    String type;
 
     public Note_class(String title ,int id )
     {
@@ -11,6 +12,12 @@ public class Note_class {
 
     }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public String getType() {
+        return type;
+    }
 
 }

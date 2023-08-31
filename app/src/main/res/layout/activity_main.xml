@@ -1,70 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
-
-
-    <TextView
-        android:id="@+id/addNoteHeading"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins"
-        android:padding="14dp"
-        android:text="Notes"
-        android:textColor="@color/orange"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        />
-
-
-
-
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/addNoteHeading">
-
-        <View
-            android:id="@+id/separator"
-            android:layout_width="410dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="15dp"
-            android:background="#515050" />
+        tools:context=".MainActivity"
+        >
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recylerview"
-            android:padding="16dp"
+        <TextView
+            android:id="@+id/addNoteHeading"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:padding="14dp"
+            android:text="Notes"
+            android:textColor="@color/orange"
+            android:textSize="24dp"
+            android:textStyle="bold"
             />
 
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/addNoteHeading">
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="410dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="#515050" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerview"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="1dp"
+                />
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/baseline_add_24"
+            app:tint="@color/white"
+            android:backgroundTint="@color/orange"/>
+
+
+
+
     </RelativeLayout>
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:src="@drawable/baseline_add_24"
-        app:tint="@color/white"
-        android:backgroundTint="@color/orange"/>
-
-
-
-
-</RelativeLayout>

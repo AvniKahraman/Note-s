@@ -79,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void onBindViewHolder(@NonNull NoteAdapter.NoteHolder holder, int position) {
             // İmajı ayarla, metni gösterme
-            holder.binding.editView.setImageResource(R.drawable.baseline_delete_24); // your_image yerine uygun resim kaynağını kullanın
-
+            holder.binding.editView.setImageResource(R.drawable.baseline_delete_24);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
